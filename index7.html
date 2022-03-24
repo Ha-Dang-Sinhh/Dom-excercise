@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="pre" onclick="pre()">pre</button>
+    <img id="img" src="" alt="">
+    <ul id="list"></ul>
+    <button type="button" id="next" onclick="next()">next</button>
+</body>
+<script>
+    let imgs = [
+        "https://fv.gamevui.com/images/image/2017/08/23/sieu-nhan-gao-do-600.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2sAEZ_LeMrrW0JtXcQUa80SoEB2-S3X3lw&usqp=CAU",
+        "https://i.pinimg.com/474x/5e/f3/b3/5ef3b3616722437d4a5e2c49f711d80b.jpg",
+        "https://topchiase24h.com/wp-content/uploads/2020/08/unnamed-file.jpg",
+    ];
+    let countImg = imgs.length;
+    let count = 0;
+    document.getElementById("img").src = imgs[0];
+    //console.log(countImg);
+    for (let i = 0; i < countImg; i++) {
+        const btn = document.createElement("li");
+        document.body.appendChild(btn);
+        btn.addEventListener("click", myFunction);
+        function myFunction() {
+            document.querySelectorAll("li");
+            document.getElementById("img").src = imgs[i];
+            //document.getElementById("img").style.width = 10;
+        }
+    }
+    
+    function next(){
+        if(count < countImg-1){
+            count += 1;
+            document.getElementById("img").src = imgs[count];
+            //console.log(count);
+        }
+    }
+
+    function pre(){
+        if(count > 0 ){
+            count -= 1;
+            document.getElementById("img").src = imgs[count];
+            //console.log(count);
+        }
+    }
+</script>
+</html>

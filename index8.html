@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id ="img" style="width: 800px; height: 500px; margin: 40 auto;">
+        <img style="width: 800px; height: 500px; margin: 40 auto;" id="img" src="" alt="">
+    </div>
+</body>
+<script>
+    let imgs = [
+        "https://fv.gamevui.com/images/image/2017/08/23/sieu-nhan-gao-do-600.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2sAEZ_LeMrrW0JtXcQUa80SoEB2-S3X3lw&usqp=CAU",
+        "https://i.pinimg.com/474x/5e/f3/b3/5ef3b3616722437d4a5e2c49f711d80b.jpg",
+        "http://fc05.deviantart.net/fs71/f/2013/129/e/1/gosei_black___mega_force_black_by_hoanngoc09-d64q8fg.jpg",
+        "https://dj24h.com/wp-content/uploads/2021/11/tong-hop-tiktok-cuc-hot-hung-hack-mix-sieu-nhan-gao.jpg",
+        "https://pbs.twimg.com/profile_images/807107466009792512/ouFeHHDj_400x400.jpg",
+    ];
+    let countImg = imgs.length;
+    console.log(countImg);
+    for (let i = 0; i < countImg; i++) {
+        const btn = document.createElement("img");
+        document.body.appendChild(btn).src = imgs[i];
+        btn.addEventListener("mouseover", myFunction);
+        function myFunction() {
+            let img = document.querySelectorAll("img");
+            document.getElementById("img").src = imgs[i];
+            img.addEventListener("mouseover", mouseOver);
+            img.addEventListener("mouseout", mouseOut);
+            function mouseOver() {
+                img.src = imgs[i];
+            }
+
+            function mouseOut() {
+                img.src = imgs[i];
+            }
+        }
+    }
+</script>
+</html>
